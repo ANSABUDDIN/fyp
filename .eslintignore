@@ -1,0 +1,6 @@
+# Ignore all TypeScript files
+*.ts
+*.tsx
+
+# Or ignore specific directories
+<!-- src/some-directory/*.ts -->

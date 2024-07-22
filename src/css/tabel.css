@@ -1,0 +1,35 @@
+.custom_table {
+  /* border: 1px solid #e7e5e4; */
+  border-radius: 10px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.custom_table .ant-table-container .ant-table-thead tr td {
+  border-bottom: none !important;
+
+}
+
+.custom_table .ant-table-container .ant-table-thead .ant-table-cell {
+  padding: 10px;
+  background-color: #2563eb;
+  color: #fff;
+  font-size: 13px;
+}
+
+.custom_table .ant-table-container .ant-table-thead .ant-table-cell::before {
+  background-color: transparent !important;
+}
+
+.ant-table-cell-scrollbar {
+  box-shadow: none !important;
+}
+.custom_table
+  .ant-table-container
+  .ant-table-tbody
+  .ant-table-row
+  .ant-table-cell {
+  padding: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}

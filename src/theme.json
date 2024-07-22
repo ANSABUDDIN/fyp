@@ -1,0 +1,36 @@
+{
+  "token": {
+    "colorPrimary": "#2563eb",
+    "fontFamily": "Poppins"
+  },
+  "components": {
+    "Select": {
+      "colorBgContainer": "#ffffff",
+      "colorBg": "#ffffff",
+      "colorTextPlaceholder": "#667085",
+      "controlHeight": 38,
+      "controlHeightLG": 38,
+      "controlHeightSM": 38,
+      "borderRadius": 8
+    },
+    "Form": {
+      
+      
+      
+      "itemMarginBottom": 10
+    },
+    "Input": {
+      "controlHeight": 38,
+      "controlHeightLG": 38,
+      "controlHeightSM": 38,
+      "colorBgContainer": "#ffffff",
+      "colorBg": "#ffffff",
+      "colorIcon": "rgb(17, 19, 34)",
+      "borderRadius": 8,
+      "colorTextPlaceholder": "#667085"
+    },
+    "Badge": {
+      "colorError": "#2563eb"
+    }
+  }
+}
