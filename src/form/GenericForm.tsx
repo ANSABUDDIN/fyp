@@ -49,7 +49,7 @@ const GenericForm = <T extends FieldValues>({
   const handleFormSubmit = async (data: T) => {
     try {
       await onSubmit(data);
-      // reset();
+      reset();
     } catch (error) {
       console.error("Submission failed", error);
     }

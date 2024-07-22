@@ -10,7 +10,7 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import { TooltipProvider } from "./components/ui/tooltip.tsx";
-import { ConfigProvider, theme } from "antd";
+import { ConfigProvider } from "antd";
 import { Provider } from "react-redux";
 import themeFile from "@/theme.json";
 import { persistor, store } from "./redux/store.ts";

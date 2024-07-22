@@ -16,7 +16,6 @@ import { useMutation } from "@tanstack/react-query";
 import { login } from "@/http/auth";
 import { useDispatch } from "react-redux";
 import { setLogin, setToken, setUser } from "@/redux/slice/authSlice";
-import { Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { Button } from "antd";
 
@@ -70,6 +69,7 @@ const Forgot = () => {
     //   userNameEmail: values.email,
     //   password: values.password,
     // });
+    console.log(values)
     navigate("/auth/login");
   }
   return (

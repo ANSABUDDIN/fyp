@@ -11,7 +11,7 @@ interface StartupCardProps {
 export function StartupCard({ data }: StartupCardProps) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user, userChat } = useSelector((state: RootState) => state.auth);
+  const { user } = useSelector((state: RootState) => state.auth);
   return (
     <div className="w-full text-center relative  max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-center p-5">

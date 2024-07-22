@@ -4,7 +4,6 @@ import {
   Paperclip,
   PlusCircle,
   SendHorizontal,
-  Smile,
   ThumbsUp,
 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
@@ -12,9 +11,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { Textarea } from "../ui/textarea";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { loggedInUserData, Message } from "@/interfaces/data";
+import { Message } from "@/interfaces/data";
 import { EmojiPicker } from "./EmojiPicker";
 import { Input } from "antd";
 import { sendMessageToUser } from "@/http/auth";
@@ -28,12 +26,9 @@ interface ChatBottombarProps {
 
 export const BottombarIcons = [{ icon: FileImage }, { icon: Paperclip }];
 
-export default function ChatBottomBar({
-  sendMessage,
-  isMobile,
-}: ChatBottombarProps) {
+export default function ChatBottomBar({ isMobile }: ChatBottombarProps) {
   const [message, setMessage] = useState("");
-  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const inputRef = useRef<any>(null);
   const { receiver, sender } = useParams();
   const dispatch = useDispatch();
   // const { user, userChat } = useSelector((state: RootState) => state.auth);
@@ -93,9 +88,7 @@ export default function ChatBottomBar({
 
   useEffect(() => {
     if (!sender && !receiver) {
-      dispatch(
-        setUserChat(null)
-      );
+      dispatch(setUserChat(null));
     }
   }, []);
 
@@ -207,10 +200,10 @@ export default function ChatBottomBar({
             value={message}
             name="message"
             placeholder="Aa"
-            onKeyDown={handleKeyPress}
+            onKeyDown={(e: any) => handleKeyPress(e)}
             className=" w-full border rounded-full flex items-center h-9 resize-none overflow-hidden bg-background"
             ref={inputRef}
-            onChange={handleInputChange}
+            onChange={(e: any)=>handleInputChange(e)}
           />
           <div className="absolute right-2 top-[25%]  ">
             <EmojiPicker

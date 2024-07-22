@@ -1,9 +1,7 @@
-import { Navigate, Outlet } from "react-router-dom";
-import Header from "@/components/elements/Header";
+
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { DashboardTwo } from "@/pages/dashbaord/DashbaordTwo";
-import DashboardThree from "@/pages/dashbaord/DashbaordThree";
 
 const DashbaordLayout = () => {
   const auth = useSelector((state: RootState) => state.auth);

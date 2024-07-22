@@ -1,4 +1,4 @@
-import StartupCard from "./StartupCard";
+// import StartupCard from "./StartupCard";
 
 
 interface StartupsProps {
@@ -18,10 +18,10 @@ const Startups: React.FC<StartupsProps> = ({ title }) => {
       </p>
 
       <div className="grid md:grid-cols-4 gap-10 mt-16">
+        {/* <StartupCard />
         <StartupCard />
         <StartupCard />
-        <StartupCard />
-        <StartupCard />
+        <StartupCard /> */}
      
         {/* <div className="flex gap-4 items-center flex-col ">
           <span className="text-blue-600 bg-blue-500/10 p-3 rounded-full">

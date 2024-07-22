@@ -20,7 +20,6 @@ import { setUserChat } from "@/redux/slice/authSlice";
 
 interface SidebarProps {
   isCollapsed: boolean;
-  setReceiver: any;
   onPress: (receiver: string) => void;
   links: {
     name: string;
@@ -35,8 +34,6 @@ interface SidebarProps {
 export function Sidebar({
   links,
   isCollapsed,
-  onPress,
-  setReceiver,
 }: SidebarProps) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -87,20 +84,16 @@ export function Sidebar({
                   <Link
                     to="#"
                     onClick={() => {
-                      // onPress(link?.userId);
-                      setReceiver({
-                        _id: link?.userId,
-                        username: link?.username,
-                        email: link?.email,
-                      });
+                      dispatch(
+                        setUserChat({
+                          _id: link?.userId,
+                          username: link?.username,
+                          email: link?.email,
+                        })
+                      );
                       navigate(`/dashbaord/chat/${link?.userId}/${user._id}`);
                     }}
-                    // className={cn(
-                    //   buttonVariants({ variant: link.variant, size: "icon" }),
-                    //   "h-11 w-11 md:h-16 md:w-16",
-                    //   link.variant === "grey" &&
-                    //     "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white"
-                    // )}
+                   
                   >
                     <Avatar className="flex justify-center items-center">
                       <AvatarImage
@@ -126,12 +119,7 @@ export function Sidebar({
             <div
               key={index}
               onClick={() => {
-                // onPress(link?.userId);
-                setReceiver({
-                  _id: link?.userId,
-                  username: link?.username,
-                  email: link?.email,
-                });
+                
                 dispatch(
                   setUserChat({
                     _id: link?.userId,
@@ -142,12 +130,7 @@ export function Sidebar({
                 navigate(`/dashbaord/chat/${link?.userId}/${user._id}`);
               }}
               className="flex items-center gap-2 border-b  pb-2 px-4"
-              // className={cn(
-              //   buttonVariants({ variant: link.variant, size: "xl" }),
-              //   link.variant === "grey" &&
-              //     "dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white shrink",
-              //   "justify-start gap-4"
-              // )}
+            
             >
               <Avatar className="flex justify-center items-center">
                 <AvatarImage

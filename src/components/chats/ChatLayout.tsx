@@ -5,17 +5,15 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { cn } from "@/lib/utils";
-import { UserData, userData } from "@/interfaces/data";
 import { Chat } from "./Chat";
 import { Sidebar } from "./SideBar";
 import { useQuery } from "@tanstack/react-query";
-import { getChatList, getConversation } from "@/http/auth";
-import { TypedUseSelectorHook, useSelector } from "react-redux";
+import { getChatList } from "@/http/auth";
+import {  useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import Pusher from "pusher-js";
 import { baseApiUrl } from "@/config/app.config";
 import { Empty } from "antd";
-import { useLocation } from "react-router-dom";
 
 interface ChatLayoutProps {
   defaultLayout?: number[] | undefined;
@@ -28,12 +26,9 @@ export function ChatLayout({
   defaultCollapsed = false,
   navCollapsedSize,
 }: ChatLayoutProps) {
-  const { state } = useLocation();
   const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
   const [isMobile, setIsMobile] = useState(false);
   const { user, userChat } = useSelector((state: RootState) => state.auth);
-  const [messagesList, setMessagesList] = useState<any>([]);
-  const [receiver, setReceiver] = useState<UserData | null>(null);
   
   useEffect(() => {
     const checkScreenWidth = () => {
@@ -131,7 +126,7 @@ export function ChatLayout({
       >
         <Sidebar
           isCollapsed={isCollapsed || isMobile}
-          setReceiver={setReceiver}
+          // setReceiver={setReceiver}
           onPress={() => {}}
           links={chatList?.data?.data?.data?.map(
             ({ lastMessage, email, userId, unreadCount, username }: any) => ({

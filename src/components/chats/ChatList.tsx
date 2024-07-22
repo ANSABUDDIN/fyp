@@ -319,7 +319,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { baseApiUrl } from "@/config/app.config";
 import moment from "moment";
-import { Empty } from "antd";
 
 interface ChatListProps {
   selectedUser: UserData;
@@ -344,7 +343,7 @@ export function ChatList({
         userId: user._id,
         selectedUserId: receiver,
       };
-      const temp = await readMessages(obj);
+       await readMessages(obj);
     } catch (error) {
       console.log("error reading messages", error);
     }

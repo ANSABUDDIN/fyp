@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Avatar, AvatarImage } from '../ui/avatar'
 import { Info, Phone, Video } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -20,7 +20,7 @@ export default function ChatTopbar({selectedUser}: ChatTopbarProps) {
           <Avatar className="flex justify-center items-center">
             <AvatarImage
               src={'/user.png'}
-              alt={selectedUser.username}
+              alt={'test'}
               width={6}
               height={6}
               className="w-10 h-10 "
