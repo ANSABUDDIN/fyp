@@ -4,6 +4,6 @@ export const tabelDateFormate = "DD-MMM-YYYY";
 export const primaryColor = "#2563eb";
 export const tabelPageSize = 330;
 export const recordsPerPage = 10;
-export const baseApiUrl = env.VITE_API_URL;
+export const baseApiUrl = env.VITE_API_URL || "http://localhost:8985/api";
 console.log("baseApiUrl", baseApiUrl);
 // export const baseApiUrl = 'https://pos-backend-phi.vercel.app/api/v1/';
